@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from typing import Literal
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from predict.prediction import predict
 
 
 class Property(BaseModel):
     region: Literal["Brussels", "Flanders", "Wallonie"]
     property_type: Literal["APARTMENT", "HOUSE"]
-    habitable_surface: int
+    habitable_surface: int = Field(gt=0)
     number_of_rooms: int
     has_terrace: bool
     has_garden: bool
