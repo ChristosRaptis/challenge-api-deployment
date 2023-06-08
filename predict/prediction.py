@@ -1,8 +1,9 @@
 import joblib
 from preprocessing.cleaning_data import preprocess
 
-lr = joblib.load('model/lr_model.pkl')
-ct = joblib.load('model/lr_transformer.pkl')
+lr = joblib.load("model/lr_model.pkl")
+ct = joblib.load("model/lr_transformer.pkl")
+
 
 def predict(dataframe: dict) -> float:
     df = preprocess(dataframe)

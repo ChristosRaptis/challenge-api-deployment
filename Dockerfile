@@ -12,6 +12,5 @@ COPY app.py /app/app.py
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
-EXPOSE 8000
-CMD ["uvicorn", "app:app", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--reload", "--host", "0.0.0.0"]
 
